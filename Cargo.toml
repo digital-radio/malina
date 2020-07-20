@@ -5,3 +5,4 @@ authors = ["Michał Budziak <michal.mariusz.b@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+blurz = "0.4.0"
