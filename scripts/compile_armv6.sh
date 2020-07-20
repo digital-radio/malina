@@ -10,7 +10,6 @@ IMAGE_NAME="raspberrypi-build"
 
 docker build -t ${IMAGE_NAME} -f "$DIR/Dockerfile" .
 docker run --rm -t \
-       -u "$(id -u):$(id -g)" \
        -e "HOME=${WORKDIR}" \
        -e "PKG_CONFIG_ALLOW_CROSS=1" \
        -w "${WORKDIR}" \
