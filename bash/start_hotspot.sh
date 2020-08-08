@@ -1,8 +1,19 @@
 #!/bin/bash
 
-# Save orig /etc/dnsmasq.conf, /etc/default/hostapd  - they will be restored after hotspot goes down
-sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-sudo mv /etc/default/hostapd /etc/default/hostapd.orig
+# Before first run orig files from /etc/dnsmasq.conf, /etc/default/hostapd must be created - they will be restored after hotspot goes down
+# sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+# sudo mv /etc/default/hostapd /etc/default/hostapd.orig
+
+if [[ ! -f "/etc/dnsmasq.conf.orig" ]]; then
+    echo "/etc/dnsmasq.conf.orig does not exists."
+    return
+fi
+
+
+if [[ ! -f "/etc/default/hostapd.orig" ]]; then
+    echo "/etc/default/hostapd.orig does not exists."
+    return
+fi
 
 # Create /etc/dnsmasq.conf from dnsmasq.conf.hotspot
 sudo cp ./dnsmasq.conf.hotspot /etc/dnsmasq.conf
