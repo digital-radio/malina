@@ -1,0 +1,9 @@
+interface=lo,uap0  # Listening interface
+no-dhcp-interface=lo,wlan0
+bind-interfaces
+server=8.8.8.8
+domain-needed
+bogus-priv
+dhcp-range=192.168.50.50,192.168.50.150,12h  # Pool of IP addresses served via DHCP
+domain=uap0    # Local wireless DNS domain
+address=/raspberrypi.uap0/192.168.50.1    # Alias for this router
