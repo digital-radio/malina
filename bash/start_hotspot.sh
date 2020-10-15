@@ -2,7 +2,7 @@
 
 # v1.0.0
 # Sript brings wifi down and starts hotspot.
-
+#
 # IMPORTANT !
 # Before first run of the script, copy the following original files (already existing at your malina): /etc/dnsmasq.conf and /etc/default/hostapd.
 # You will use them later to restore configuration when you don't need your hotspot anymore.
@@ -61,3 +61,4 @@ service hostapd restart
 service dnsmasq restart
 
 # Hotspot should be up and running!
+echo "Hotspot should be up and running!"
