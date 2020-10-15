@@ -1,6 +1,12 @@
 #!/bin/bash
 
-# Before first run orig files from /etc/dnsmasq.conf, /etc/default/hostapd must be created - they will be restored after hotspot goes down
+# v1.0.0
+# Sript brings wifi down and starts hotspot.
+
+# IMPORTANT !
+# Before first run of the script, copy the following original files (already existing at your malina): /etc/dnsmasq.conf and /etc/default/hostapd.
+# You will use them later to restore configuration when you don't need your hotspot anymore.
+# In order to copy files type:
 # sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 # sudo mv /etc/default/hostapd /etc/default/hostapd.orig
 
