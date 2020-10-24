@@ -6,3 +6,5 @@ edition = "2018"
 
 [dependencies]
 #blurz = "0.4.0"
+dbus = "0.9.0"
+dbus-crossroads = "0.3.0"
