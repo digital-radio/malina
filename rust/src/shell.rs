@@ -5,7 +5,7 @@ pub struct Shell {
     path: String,
 }
 
-impl<'a> Shell {
+impl Shell {
     pub fn new(path: String) -> Shell {
         Shell { path }
     }
