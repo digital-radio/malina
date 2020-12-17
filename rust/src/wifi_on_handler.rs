@@ -48,3 +48,24 @@ impl WifiOnHandler {
     }
 }
 
+mod test {
+    use crate::wifi_on_handler::WifiOnHandler;
+    use std::sync::{Arc, Mutex};
+    use crate::shell::Shell;
+
+    #[test]
+    fn returns_error_on_invalid_body() {
+        // given
+        let shell = Arc::new(Mutex::new(Shell::new("/test".to_owned())));
+        let handler = WifiOnHandler::new(Arc::clone(&shell));
+
+        // when
+        let result = handler.handle("example".to_owned());
+
+        // then
+        assert_eq!(
+            Err(("pl.digitalradio.JsonDecodeError", "Could not decode args").into()),
+            result
+        );
+    }
+}
