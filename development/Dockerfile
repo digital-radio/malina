@@ -6,7 +6,8 @@ RUN apt-get update \
     build-essential \
     pkg-config \
     libdbus-glib-1-dev \
-    dbus-x11
+    dbus-x11 \
+    qdbus
 
 WORKDIR /app
 
