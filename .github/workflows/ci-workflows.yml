@@ -1,0 +1,21 @@
+name: CI
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+jobs:
+  build_amd64:
+     runs-on: ubuntu-latest
+     steps:
+      - name: Checkout source code from repo
+        uses: actions/checkout@v2
+      - name: Build
+        run: cargo build --manifest-path=rust/Cargo.toml
+  build_arm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code from repo
+        uses: actions/checkout@v2
+      - name: Build
+        run: ./rust/scripts/compile_armv6.sh
