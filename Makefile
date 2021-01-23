@@ -3,3 +3,6 @@ build:
 
 build-arm:
 	./rust/scripts/compile_armv6.sh
+
+test:
+	cargo test --manifest-path=rust/Cargo.toml
